@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Las alpacas y sus parientes</title>
+</head>
+<body>
+    <h1>Llamas, Alpacas, Guanacos y Vicuñas</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt nunc id ultrices dictum. Nam quis imperdiet enim, vel aliquet sem. Nulla a nibh urna. Aliquam et fringilla odio. Sed scelerisque lacinia enim. Sed risus orci, mollis sit amet egestas id, fermentum a ante. Etiam ut neque in odio ornare pellentesque.</p>
+    
+    <!-- el rel es para evitar el tabnabing-->
+    <!-- el target es para abrir el link, con _blank se abre en una nueva pestaña-->
+    <h2>Llamas</h2>
+    <a href="https://en.wikipedia.org/wiki/Llama" target="_blank" rel="noopener noreferrer"><img src="Llama.jpg"/></a>
+    <p>Vestibulum ultrices urna metus, porttitor sodales sapien convallis in. Curabitur volutpat lorem odio, ut aliquam nulla euismod tristique. Sed a hendrerit enim. Proin vel eros nec leo pellentesque facilisis. Nam eget volutpat felis. Morbi vitae maximus risus. Vivamus condimentum elementum risus, vitae vehicula nunc pretium viverra. Suspendisse potenti. Cras id nibh lorem. Nullam cursus justo ac aliquet cursus. Donec aliquet lorem arcu, a condimentum augue sollicitudin a. Suspendisse interdum ipsum eu nulla commodo porttitor. Integer efficitur dui posuere, tincidunt nibh vel, gravida orci. Duis velit tellus, dignissim in vehicula eu, egestas vel lacus. Nam in tempor nibh, quis consectetur ligula. Etiam gravida est non est bibendum sodales.</p>
+    
+    <h2>Alpacas</h2>
+    <a href="https://ucanr.edu/site/small-acreage-landowners/llamas-y-alpacas" target="_blank" rel="noopener noreferrer"><img src="Alpacas.jpg"/></a>
+    <p>Etiam gravida leo nunc, non pulvinar lorem finibus et. Phasellus venenatis non leo et interdum. Pellentesque tincidunt malesuada metus. Proin a porta dolor, sed ornare libero. Nullam at neque mauris. Cras non quam ut libero maximus ultricies eget a tellus. Nunc diam ipsum, finibus sodales eleifend ac, ornare vitae est. Aenean posuere, justo eu vestibulum pretium, velit sem elementum libero, nec scelerisque sapien enim sodales sapien. Integer in quam semper, accumsan arcu non, euismod dui. Suspendisse posuere ac lectus id vehicula. Praesent dapibus fringilla augue ut laoreet. Mauris nulla metus, consequat nec auctor vel, sollicitudin non leo. Ut ac dignissim nibh.</p>
+    
+    <h2>Guanacos</h2>
+    <a href="https://www.temaiken.org.ar/ficha-tecnica-guanaco-2" target="_blank" rel="noopener noreferrer"><img src="Guanacos.jpg"/></a>
+    <p>Mauris cursus sed urna non efficitur. Vestibulum non justo quis libero blandit ultrices non et erat. Suspendisse eu consequat quam. Duis elit enim, aliquet sed justo id, elementum dignissim ligula. Donec at scelerisque purus. Etiam eu dictum nisl, a auctor massa. Nullam interdum at eros ac aliquam. Nullam vitae sapien mattis, feugiat erat non, tempor diam. Nam a augue consequat, luctus nisl ac, accumsan justo. Duis at luctus eros. Suspendisse auctor lorem quis quam lobortis pulvinar id vel tortor. Mauris fringilla efficitur nisi, non euismod purus commodo a. Integer ultrices orci nulla, sed consequat est ullamcorper eu.</p>
+    
+    <h2>Vicuñas</h2>
+    <a href="https://bioweb.bio/faunaweb/mammaliaweb/FichaEspecie/Vicugna%20vicugna" target="_blank" rel="noopener noreferrer"><img src="Vicuñas.jpg" width="300"/></a>
+    <p>Morbi ac suscipit tellus. Sed ex sapien, facilisis lobortis efficitur et, eleifend in purus. Nulla posuere erat in nisl interdum laoreet. Integer egestas felis et lorem pretium, et lobortis libero malesuada. In egestas molestie tortor. Vestibulum in lorem rutrum, tincidunt augue eu, posuere felis. Duis at eros urna. In imperdiet, enim id sodales interdum, arcu lacus scelerisque mi, cursus dapibus risus urna ac nisi. In in fringilla urna. Maecenas vehicula, nibh in viverra vehicula, lorem nulla sodales leo, sed imperdiet dui lectus in tortor.</p>
+
+    <h2>Principales usos</h2>
+    <!--Tablas-->
+    <table border = 1>
+        <tr><!--Table row (para filas)-->
+            <th><!--Table head (columna de cabecera)-->
+                Llama
+            </th>
+            <th>Alpaca</th>
+            <th>Guanaco</th>
+            <th>Vicuña</th>
+        </tr>
+        <tr>
+            <td><!--Table data (esto es para que no sea como un titulo de una columna, si no es un dato de ese encabezado)-->
+                <!--Llama-->
+                <ul>
+                    <li>Doméstico</li>
+                    <li>Carga</li>
+                    <li>Lana</li>
+                </ul>
+            </td>
+            <td> <!--Alapaca-->
+                <ul>
+                    <li>Doméstico</li>
+                    <li>Lana</li>
+                    <li>Carne</li>
+                </ul>
+            </td>
+            <td><!--Guanaco-->
+                <ul>
+                    <li>Salvaje</li>
+                    <li>Lana</li>
+                    <li>Carne</li>
+                </ul>
+            </td>
+            <td><!--Vicuña-->
+                <ul>
+                    <li>Salvaje</li>
+                    <li>Lana</li>
+                    <li>Carne</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <form> <!--Para definir un formulario-->
+        <label><h2>Formulario</h2></label>
+        <label for="nombre"><!--Esto es para envolver algo que requiera una etiqueta-->
+            Nombre:
+            <input id="nombre" name="nombre" type="text"/> <!--Este mismo se cierra solo como la imagen/texto es para texto-->
+        </label>
+        <br>
+        <label for="email">
+            Correo electrónico:
+            <!--el id es el identificador para el campo en este caso el input/ el name es el nombre de la variable de lo que se teclee / el tipo es el tipo que se va a capturar en el campo-->
+            <input id="email" name="Correo" type="email" /> <!--email es para que sea de email-->
+        </label>
+        <br>
+        <label>Genero:</label>
+        <label for="genero">
+            <input id="genero" name="genero" type="radio"/> <!--radio es para que sea una opcion de circulo-->
+            Femenino
+        </label>
+        <label for="genero2">
+            <input id="genero2" name="genero" type="radio"/>
+            Masculino
+        </label>
+        <label for="genero3">
+            <input id="genero3" name="genero" type="radio"/>
+            Otro
+        </label>
+        <br>
+        <label for="comentario">
+            Escribe un comentario: <br>
+            <textarea name="comentario" id="comentario" rows="5" cols="80"></textarea>
+        </label>
+        <br>
+        <input type="button" value="Enviar"/>
+        <!--Tambien se puede (<button type="button">Enviar</button>)-->
+    </form>
+</body>
+</html>
