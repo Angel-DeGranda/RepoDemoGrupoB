@@ -1,0 +1,84 @@
+*{ /*este es el selector de todo, o sea es todo el documento*/
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background: lightcyan;
+    font-family: Arial, Helvetica, sans-serif;/*el sistema va a poner el primer font, pero si no esta instalada entonces agarra la de enmedio, pero si tampoco esta instalada, entonces se va a poner la ultima, la ultima si o si esta en todos los navegadores. si no puede renderizar con ninguna de las primeras se pone la última*/
+}
+
+#contenedor{ /*este es para modificar un objeto con el id*/
+    width: 70%;
+    margin: 0 auto;
+    border: 1px solid black; /*no funciona el separar por comas, si o si sin comas, con espacios unicamente*/
+}
+
+header{
+    background: brown;
+    height: 100px;
+    width: 100%; /*este tomara el 100% del 70% del contenedor de antes, no de toda la página*/
+    margin: 0px;
+    text-align:  center;
+    line-height: 100px;
+    color: white;
+    border-bottom: 3px solid black; /*este es para poner un borde pero para la parte de abajo*/
+}
+
+nav{
+    background: cyan;
+    height: 50px;
+    border-bottom: 1px solid black;
+}
+
+nav ul li{ /*los elementos que estan en el nav y dentro de ul y dentro de li se van a hacer lo siguiente*/
+    float: left;
+    list-style: none; /*para desaparecer las biñetas se usa este*/
+    margin: 10px; /* se ponen en top right bottom left, y si tiene uno se aplica en todos, si tiene dos se aplica el primero arriba y abajo y el segundo en la derecha y luego a la izquierda*/
+    line-height: 30px;
+}
+
+.clear{ /*para una clase se le pone punto seguido del nombre de la clase*/
+    clear: both;
+}
+
+#contenido{
+    float: left;
+    width: 80%;
+    background: green;
+    min-height: 500px;
+}
+
+aside{
+    float: left;
+    width: calc(20% - 20px);
+    background: pink;
+    min-height: 500px;
+    padding: 0px 10px;
+}
+
+footer{
+    background: black;
+    color: white;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+}
+
+.article{
+    color: white;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid white;
+    padding-bottom: 10px;
+}
+
+.article:first-child{ /*con esto accedo al primer hijo del coso article*/
+    border-top: 1px solid white;
+    padding-top: 10px;
+}
+
+.article h2{ /*solo le aplica las cosas a los h2 que esten dentro de la class article*/
+    font-size: 20px;
+    color: yellow;
+}
