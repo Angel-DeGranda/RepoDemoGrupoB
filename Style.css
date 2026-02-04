@@ -1,0 +1,111 @@
+body{
+    margin: 50px;
+    background: rgb(218, 163, 253);
+}
+
+img{
+    padding: 20px;
+    border-radius: 50%;
+    background: linear-gradient(10deg, #fce914 20%, #fff 50%);
+}
+
+.imagen-main{
+    display: flex;
+    justify-content: center;
+}
+
+h1{
+    width: 300px;
+    text-align: center;
+    font-family: console, sans-serif;
+    color: yellow;
+    font-size: 70px;
+    transform: rotate(5deg);
+    text-shadow: 5px 5px 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.intro{
+    background: rgb(254, 35, 35);
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+}
+
+.menu{
+    padding: 50px;
+    background: rgb(220, 179, 131);
+    margin-left: 20px;
+    margin-right: 20px;
+    text-decoration: none;
+    color: purple;
+    font-size: 50px;
+    block-size: 100px;
+}
+
+.nav{
+    font-size: 30px;
+    margin-top: 10px;
+    list-style: none;
+    padding-left: 0px;
+}
+
+.nav li{
+    display: inline-block;
+}
+
+.nav a {
+    color: white;
+    background-color: aqua;
+    padding: 5px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+a:link{
+    background-color: blue;
+    color: white;
+    text-decoration: none;
+    padding: 2px;
+}
+
+a:visited{
+    background-color: purple;
+}
+
+a:hover{
+    background-color: transparent;
+    color: blue;
+    text-decoration: underline;
+}
+
+a:active{
+    color: red;
+}
+.div-manzana{
+    margin: 10px;
+    padding: 20px;
+    background: #2A7B9B;
+    background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+    border-radius: 10px;
+    border: 2px solid white;
+}
+
+.div-chocolate{
+    margin: 10px;
+    padding: 20px;
+    background: #9c6a35;
+    background: linear-gradient(90deg, rgba(156, 106, 53, 1) 0%, rgba(242, 151, 61, 1) 100%);
+    border-radius: 10px;
+    border: 2px solid white;
+}
+
+.div-fresa{
+    margin: 10px;
+    padding: 20px;
+    background: #f23d3d;
+    background: radial-gradient(circle, rgba(242, 61, 61, 1) 0%, rgba(237, 116, 31, 1) 100%);
+    border-radius: 10px;
+    border: 2px solid white;
+}
