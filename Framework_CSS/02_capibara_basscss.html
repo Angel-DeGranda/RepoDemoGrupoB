@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capibara — El Animal Más Tranquilo del Mundo</title>
+  <link rel="stylesheet" href="https://unpkg.com/basscss@8.0.2/css/basscss.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cafe: #5c3d1e;
+      --cafe-claro: #8b6040;
+      --beige: #f5ede0;
+      --verde: #4a7c59;
+      --verde-claro: #6aab7e;
+      --arena: #d9c4a0;
+      --crema: #fdf6ec;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      background: var(--crema);
+      color: #2d2d2d;
+      margin: 0;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, var(--cafe) 0%, var(--cafe-claro) 60%, var(--verde) 100%);
+      min-height: 92vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 600px; height: 600px;
+      background: rgba(255,255,255,0.04);
+      border-radius: 50%;
+      top: -100px; right: -150px;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      width: 400px; height: 400px;
+      background: rgba(255,255,255,0.04);
+      border-radius: 50%;
+      bottom: -80px; left: -80px;
+    }
+
+    .capybara-emoji {
+      font-size: 100px;
+      line-height: 1;
+      margin-bottom: 16px;
+      filter: drop-shadow(0 8px 24px rgba(0,0,0,0.3));
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(42px, 8vw, 80px);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.1;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    .hero-subtitle {
+      font-size: 18px;
+      color: rgba(255,255,255,0.85);
+      font-weight: 300;
+      letter-spacing: 1px;
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 30px;
+      color: rgba(255,255,255,0.6);
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* Tarjetas de datos */
+    .stat-card {
+      background: white;
+      border-radius: 16px;
+      padding: 28px 20px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+      border-bottom: 4px solid var(--verde);
+      transition: transform 0.2s;
+    }
+
+    .stat-card:hover { transform: translateY(-4px); }
+
+    .stat-icon {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: var(--beige);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 12px;
+      font-size: 22px;
+      color: var(--cafe);
+    }
+
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--cafe);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 4px;
+    }
+
+    /* Sección curiosidades */
+    .fact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      margin-bottom: 14px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .fact-icon {
+      width: 42px; height: 42px;
+      border-radius: 10px;
+      background: var(--verde);
+      display: flex; align-items: center; justify-content: center;
+      color: white;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    /* Navbar */
+    .navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(92, 61, 30, 0.95);
+      backdrop-filter: blur(8px);
+    }
+
+    /* Hábitat cards */
+    .habitat-card {
+      border-radius: 14px;
+      padding: 24px;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .habitat-card::before {
+      content: '';
+      position: absolute;
+      right: -20px; bottom: -20px;
+      width: 100px; height: 100px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+    }
+
+    /* Sección galería de amigos */
+    .amigo-tag {
+      display: inline-block;
+      background: var(--beige);
+      color: var(--cafe);
+      border-radius: 20px;
+      padding: 8px 18px;
+      font-size: 14px;
+      font-weight: 600;
+      margin: 4px;
+      border: 2px solid var(--arena);
+    }
+
+    /* Footer */
+    .footer-bg {
+      background: var(--cafe);
+    }
+
+    /* Divider decorativo */
+    .wave-divider {
+      height: 60px;
+      background: var(--crema);
+      clip-path: ellipse(55% 100% at 50% 0%);
+    }
+
+    /* Section labels */
+    .section-eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--verde);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar flex items-center justify-between px3 py2">
+    <span style="font-family:'Playfair Display',serif; color:white; font-size:18px; font-weight:700;">
+      🌿 CapiWorld
+    </span>
+    <div>
+      <a href="#datos" class="white px2" style="text-decoration:none; font-size:14px; opacity:0.85;">Datos</a>
+      <a href="#curiosidades" class="white px2" style="text-decoration:none; font-size:14px; opacity:0.85;">Curiosidades</a>
+      <a href="#habitat" class="white px2" style="text-decoration:none; font-size:14px; opacity:0.85;">Hábitat</a>
+      <a href="#contacto" class="white px2" style="text-decoration:none; font-size:14px; opacity:0.85;">Contacto</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" style="padding-top:60px;">
+    <div style="position:relative; z-index:1;">
+      <div class="capybara-emoji">🦫</div>
+      <h1 class="hero-title">Capibara</h1>
+      <p class="hero-subtitle">Hydrochoerus hydrochaeris — El roedor más grande del planeta</p>
+      <div class="mt3">
+        <span style="display:inline-block; background:rgba(255,255,255,0.15); color:white; padding:8px 20px; border-radius:20px; font-size:13px; letter-spacing:1px; margin-right:8px;">
+          <i class="fa fa-map-marker-alt mr1"></i> América del Sur
+        </span>
+        <span style="display:inline-block; background:rgba(255,255,255,0.15); color:white; padding:8px 20px; border-radius:20px; font-size:13px; letter-spacing:1px;">
+          <i class="fa fa-shield-halved mr1"></i> Preocupación Menor
+        </span>
+      </div>
+      <div class="mt4">
+        <a href="#datos" class="btn" style="background:white; color:var(--cafe); font-weight:700; border-radius:50px; padding:12px 36px; font-size:15px; text-decoration:none;">
+          Descubrir más <i class="fa fa-arrow-down ml1"></i>
+        </a>
+      </div>
+    </div>
+    <div class="scroll-hint"><i class="fa fa-chevron-down mr1"></i> scroll</div>
+  </section>
+
+  <!-- BREADCRUMB -->
+  <div class="px3 py2" style="background:var(--beige); border-bottom:1px solid var(--arena);">
+    <div style="max-width:1100px; margin:0 auto;">
+      <span class="gray" style="font-size:13px;">
+        <a href="#" style="color:var(--cafe-claro); text-decoration:none;"><i class="fa fa-house mr1"></i> Inicio</a>
+        <span class="px1 gray">›</span>
+        <a href="#" style="color:var(--cafe-claro); text-decoration:none;">Animales</a>
+        <span class="px1 gray">›</span>
+        <a href="#" style="color:var(--cafe-claro); text-decoration:none;">Mamíferos</a>
+        <span class="px1 gray">›</span>
+        <strong style="color:var(--cafe);">Capibara</strong>
+      </span>
+    </div>
+  </div>
+
+  <!-- DATOS CLAVE -->
+  <section id="datos" class="py4 px3" style="background:var(--crema);">
+    <div style="max-width:1100px; margin:0 auto;">
+      <p class="section-eyebrow center mb1">En números</p>
+      <h2 class="h2 bold center mt0 mb4" style="color:var(--cafe);">Datos del Capibara</h2>
+
+      <div class="flex flex-wrap" style="gap:20px;">
+        <div class="col col-4 stat-card" style="flex:1; min-width:180px;">
+          <div class="stat-icon"><i class="fa fa-weight-hanging"></i></div>
+          <div class="stat-number">65 kg</div>
+          <div class="stat-label">Peso promedio</div>
+        </div>
+        <div class="col col-4 stat-card" style="flex:1; min-width:180px;">
+          <div class="stat-icon"><i class="fa fa-ruler-horizontal"></i></div>
+          <div class="stat-number">1.3 m</div>
+          <div class="stat-label">Longitud</div>
+        </div>
+        <div class="col col-4 stat-card" style="flex:1; min-width:180px;">
+          <div class="stat-icon"><i class="fa fa-calendar"></i></div>
+          <div class="stat-number">10 años</div>
+          <div class="stat-label">Esperanza de vida</div>
+        </div>
+        <div class="col col-4 stat-card" style="flex:1; min-width:180px;">
+          <div class="stat-icon"><i class="fa fa-users"></i></div>
+          <div class="stat-number">20+</div>
+          <div class="stat-label">Por grupo social</div>
+        </div>
+        <div class="col col-4 stat-card" style="flex:1; min-width:180px;">
+          <div class="stat-icon"><i class="fa fa-clock"></i></div>
+          <div class="stat-number">150 días</div>
+          <div class="stat-label">Gestación</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CURIOSIDADES -->
+  <section id="curiosidades" class="py4 px3" style="background:var(--beige);">
+    <div style="max-width:1100px; margin:0 auto;">
+      <div class="flex flex-wrap" style="gap:40px; align-items:flex-start;">
+
+        <!-- Texto -->
+        <div class="col col-7" style="flex:2; min-width:280px;">
+          <p class="section-eyebrow mb1">¿Sabías que…?</p>
+          <h2 class="h2 bold mt0 mb3" style="color:var(--cafe);">Curiosidades increíbles</h2>
+
+          <div class="fact-item">
+            <div class="fact-icon"><i class="fa fa-droplet"></i></div>
+            <div>
+              <strong>Nadador experto</strong>
+              <p class="mt1 mb0 gray" style="font-size:15px; line-height:1.6;">
+                Puede permanecer sumergido hasta 5 minutos. Tiene patas ligeramente palmeadas y sus ojos, nariz y orejas están en la parte superior de la cabeza para poder vigilar mientras nada.
+              </p>
+            </div>
+          </div>
+
+          <div class="fact-item">
+            <div class="fact-icon" style="background:var(--cafe-claro);"><i class="fa fa-sun"></i></div>
+            <div>
+              <strong>El mejor amigo de todos</strong>
+              <p class="mt1 mb0 gray" style="font-size:15px; line-height:1.6;">
+                Conocido como el animal más sociable del reino animal. Cocodrilos, monos, pájaros, tortugas y hasta gatos lo adoptan como su "mejor amigo" sin que el capibara se inmute.
+              </p>
+            </div>
+          </div>
+
+          <div class="fact-item">
+            <div class="fact-icon" style="background:var(--olive, #6b7c43);"><i class="fa fa-leaf"></i></div>
+            <div>
+              <strong>Vegetariano estricto</strong>
+              <p class="mt1 mb0 gray" style="font-size:15px; line-height:1.6;">
+                Se alimenta de hierbas, acuáticas y terrestres. Puede comer hasta 3.5 kg de vegetación por día. Sus dientes crecen continuamente a lo largo de su vida.
+              </p>
+            </div>
+          </div>
+
+          <div class="fact-item">
+            <div class="fact-icon" style="background:#8b4513;"><i class="fa fa-temperature-half"></i></div>
+            <div>
+              <strong>Regulación térmica ingeniosa</strong>
+              <p class="mt1 mb0 gray" style="font-size:15px; line-height:1.6;">
+                Se bañan en lodo y agua para regular su temperatura corporal ya que no tienen glándulas sudoríparas. Son más activos al amanecer y al atardecer.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel lateral -->
+        <div class="col col-5" style="flex:1; min-width:240px;">
+          <div style="background:var(--cafe); border-radius:20px; padding:28px; color:white;">
+            <h3 class="h4 bold mt0 mb3" style="font-family:'Playfair Display',serif;">
+              <i class="fa fa-circle-info mr2" style="color:var(--arena);"></i>
+              Clasificación
+            </h3>
+            <ul class="list-reset m0">
+              <li class="py2 border-bottom" style="border-color:rgba(255,255,255,0.15) !important; font-size:14px;">
+                <span style="opacity:0.6; display:block; font-size:11px; text-transform:uppercase; letter-spacing:1px;">Reino</span>
+                <strong>Animalia</strong>
+              </li>
+              <li class="py2 border-bottom" style="border-color:rgba(255,255,255,0.15) !important; font-size:14px;">
+                <span style="opacity:0.6; display:block; font-size:11px; text-transform:uppercase; letter-spacing:1px;">Orden</span>
+                <strong>Rodentia</strong>
+              </li>
+              <li class="py2 border-bottom" style="border-color:rgba(255,255,255,0.15) !important; font-size:14px;">
+                <span style="opacity:0.6; display:block; font-size:11px; text-transform:uppercase; letter-spacing:1px;">Familia</span>
+                <strong>Caviidae</strong>
+              </li>
+              <li class="py2 border-bottom" style="border-color:rgba(255,255,255,0.15) !important; font-size:14px;">
+                <span style="opacity:0.6; display:block; font-size:11px; text-transform:uppercase; letter-spacing:1px;">Género</span>
+                <strong>Hydrochoerus</strong>
+              </li>
+              <li class="py2" style="font-size:14px;">
+                <span style="opacity:0.6; display:block; font-size:11px; text-transform:uppercase; letter-spacing:1px;">Especie</span>
+                <strong style="font-style:italic;">H. hydrochaeris</strong>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt3" style="background:var(--verde); border-radius:20px; padding:24px; color:white; text-align:center;">
+            <div style="font-size:48px; margin-bottom:8px;">😌</div>
+            <p class="bold mt0 mb1" style="font-size:18px; font-family:'Playfair Display',serif;">Estado de conservación</p>
+            <span style="background:rgba(255,255,255,0.2); padding:6px 18px; border-radius:20px; font-size:13px; font-weight:600;">
+              <i class="fa fa-circle-check mr1"></i> Preocupación Menor
+            </span>
+            <p class="mt2 mb0" style="font-size:13px; opacity:0.85; line-height:1.6;">
+              Población estable en la mayor parte de su rango, aunque afectada por la caza y pérdida de hábitat.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HÁBITAT -->
+  <section id="habitat" class="py4 px3" style="background:var(--crema);">
+    <div style="max-width:1100px; margin:0 auto;">
+      <p class="section-eyebrow center mb1">¿Dónde vive?</p>
+      <h2 class="h2 bold center mt0 mb4" style="color:var(--cafe);">Su hábitat natural</h2>
+
+      <div class="flex flex-wrap" style="gap:20px;">
+        <div class="col col-4 habitat-card" style="flex:1; min-width:200px; background:var(--verde);">
+          <i class="fa fa-water fa-2x mb2" style="opacity:0.8;"></i>
+          <h3 class="h4 bold mt0 mb1" style="font-family:'Playfair Display',serif;">Riberas de ríos</h3>
+          <p style="font-size:14px; opacity:0.9; line-height:1.6;">
+            Viven cerca de cuerpos de agua dulce: ríos, lagos y pantanos. El agua es su refugio ante depredadores.
+          </p>
+        </div>
+        <div class="col col-4 habitat-card" style="flex:1; min-width:200px; background:var(--cafe-claro);">
+          <i class="fa fa-tree fa-2x mb2" style="opacity:0.8;"></i>
+          <h3 class="h4 bold mt0 mb1" style="font-family:'Playfair Display',serif;">Sabanas tropicales</h3>
+          <p style="font-size:14px; opacity:0.9; line-height:1.6;">
+            Los Llanos venezolanos y colombianos albergan las poblaciones más numerosas del mundo.
+          </p>
+        </div>
+        <div class="col col-4 habitat-card" style="flex:1; min-width:200px; background:var(--cafe);">
+          <i class="fa fa-globe-americas fa-2x mb2" style="opacity:0.8;"></i>
+          <h3 class="h4 bold mt0 mb1" style="font-family:'Playfair Display',serif;">10 países</h3>
+          <p style="font-size:14px; opacity:0.9; line-height:1.6;">
+            Presentes en Venezuela, Brasil, Colombia, Perú, Argentina, Bolivia, Paraguay, Uruguay, Guyana y Ecuador.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AMIGOS DEL CAPIBARA -->
+  <section class="py4 px3" style="background:var(--beige);">
+    <div style="max-width:1100px; margin:0 auto; text-align:center;">
+      <p class="section-eyebrow mb1">Vida social</p>
+      <h2 class="h2 bold mt0 mb2" style="color:var(--cafe);">El amigo universal 🤝</h2>
+      <p class="gray mb4" style="max-width:600px; margin:0 auto 32px; font-size:16px; line-height:1.7;">
+        El capibara es conocido por su temperamento extremadamente calmado. Otras especies los usan como "silla de descanso" y los capibaras no parecen importarles en absoluto.
+      </p>
+      <div>
+        <span class="amigo-tag"><i class="fa fa-bird mr1"></i> Aves</span>
+        <span class="amigo-tag">🐊 Cocodrilos</span>
+        <span class="amigo-tag">🐒 Monos</span>
+        <span class="amigo-tag">🐢 Tortugas</span>
+        <span class="amigo-tag">🐱 Gatos</span>
+        <span class="amigo-tag">🦆 Patos</span>
+        <span class="amigo-tag">🦌 Ciervos</span>
+        <span class="amigo-tag"><i class="fa fa-dog mr1"></i> Perros</span>
+        <span class="amigo-tag">🦜 Loros</span>
+        <span class="amigo-tag">🐍 Serpientes</span>
+      </div>
+      <p class="mt3" style="font-size:13px; color:var(--cafe-claro);">
+        <i class="fa fa-quote-left mr1"></i>
+        Todos son bienvenidos en el mundo del capibara
+        <i class="fa fa-quote-right ml1"></i>
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACTO / SUSCRIPCIÓN -->
+  <section id="contacto" class="py4 px3" style="background:var(--crema);">
+    <div style="max-width:600px; margin:0 auto; text-align:center;">
+      <p class="section-eyebrow mb1">¿Te encantó?</p>
+      <h2 class="h2 bold mt0 mb2" style="color:var(--cafe);">Únete al club capibara</h2>
+      <p class="gray mb3" style="font-size:15px; line-height:1.6;">
+        Recibe curiosidades sobre el capibara y otros animales increíbles de América Latina directamente en tu correo.
+      </p>
+
+      <div class="flex flex-wrap" style="gap:10px; justify-content:center;">
+        <input
+          class="input"
+          type="text"
+          placeholder="Tu nombre"
+          style="flex:1; min-width:180px; max-width:220px; border-radius:10px; padding:12px 16px; border:2px solid var(--arena);"
+        >
+        <input
+          class="input"
+          type="email"
+          placeholder="correo@ejemplo.com"
+          style="flex:1; min-width:220px; max-width:280px; border-radius:10px; padding:12px 16px; border:2px solid var(--arena);"
+        >
+      </div>
+      <div class="mt2">
+        <button class="btn bold" style="background:var(--cafe); color:white; border-radius:50px; padding:12px 40px; font-size:15px; font-family:'Source Sans 3',sans-serif; width:100%; max-width:400px;">
+          <i class="fa fa-envelope mr2"></i> Suscribirme gratis
+        </button>
+      </div>
+      <p style="font-size:12px; color:#aaa; margin-top:12px;">
+        <i class="fa fa-lock mr1"></i> Sin spam. Puedes cancelar cuando quieras.
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer-bg py3 px3" style="text-align:center;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <p class="white bold mb1" style="font-family:'Playfair Display',serif; font-size:20px;">🌿 CapiWorld</p>
+      <p style="color:rgba(255,255,255,0.6); font-size:13px; margin:0 0 16px;">
+        Difundiendo el amor por el animal más tranquilo del planeta
+      </p>
+      <div class="mb3" style="display:flex; justify-content:center; gap:12px;">
+        <a href="#" style="width:38px; height:38px; background:rgba(255,255,255,0.1); border-radius:50%; display:flex; align-items:center; justify-content:center; color:white; text-decoration:none;">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#" style="width:38px; height:38px; background:rgba(255,255,255,0.1); border-radius:50%; display:flex; align-items:center; justify-content:center; color:white; text-decoration:none;">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#" style="width:38px; height:38px; background:rgba(255,255,255,0.1); border-radius:50%; display:flex; align-items:center; justify-content:center; color:white; text-decoration:none;">
+          <i class="fab fa-youtube"></i>
+        </a>
+      </div>
+      <p style="color:rgba(255,255,255,0.35); font-size:12px; margin:0;">
+        Construido con Basscss v8.0.2 + Font Awesome 6.5 — Sin JavaScript requerido
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>

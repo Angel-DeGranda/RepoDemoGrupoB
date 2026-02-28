@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elementos Basscss — Referencia Visual</title>
+  <link rel="stylesheet" href="https://unpkg.com/basscss@8.0.2/css/basscss.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body { font-family: Georgia, serif; background: #f5f5f5; }
+    .code-block {
+      background: #1e1e2e;
+      color: #cdd6f4;
+      border-radius: 6px;
+      padding: 14px 18px;
+      font-family: 'Courier New', monospace;
+      font-size: 13px;
+      white-space: pre;
+      overflow-x: auto;
+      margin-top: 10px;
+    }
+    .section-card {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 28px 32px;
+      margin-bottom: 28px;
+      border-left: 5px solid #0074d9;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    }
+    .section-title {
+      font-size: 13px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #0074d9;
+      margin-bottom: 6px;
+    }
+    .divider { border: none; border-top: 1px solid #e8e8e8; margin: 18px 0; }
+    .preview-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #aaa;
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body class="p3">
+
+  <div class="center mb4">
+    <h1 class="h1 bold" style="color:#0074d9;">Basscss</h1>
+    <p class="h4 gray">Referencia visual de clases — Para presentación</p>
+    <p class="gray" style="font-size:13px;">
+      CDN: <code style="background:#eee;padding:2px 6px;border-radius:4px;">
+        &lt;link rel="stylesheet" href="https://unpkg.com/basscss@8.0.2/css/basscss.min.css"&gt;
+      </code>
+    </p>
+  </div>
+
+  <!-- ===========================
+       1. TIPOGRAFÍA
+  ============================ -->
+  <div class="section-card">
+    <div class="section-title">01 — Tipografía</div>
+    <h2 class="h3 bold mt1 mb2">Clases de encabezado y texto</h2>
+    <div class="preview-label">Vista previa:</div>
+    <h1 class="h1">h1 — Encabezado grande</h1>
+    <h2 class="h2">h2 — Encabezado</h2>
+    <h3 class="h3">h3 — Subtítulo</h3>
+    <h4 class="h4">h4 — Sección</h4>
+    <p class="bold">Texto en <span class="bold">negrita</span> con .bold</p>
+    <p class="italic">Texto en <span class="italic">cursiva</span> con .italic</p>
+    <p class="caps">Texto en mayúsculas con .caps</p>
+    <p class="gray">Texto gris con .gray</p>
+    <hr class="divider">
+    <div class="preview-label">Código:</div>
+    <div class="code-block">&lt;h1 class="h1"&gt;Encabezado grande&lt;/h1&gt;
+&lt;h2 class="h2"&gt;Encabezado&lt;/h2&gt;
+&lt;h3 class="h3"&gt;Subtítulo&lt;/h3&gt;
+&lt;p class="bold"&gt;Texto en negrita&lt;/p&gt;
+&lt;p class="italic"&gt;Texto en cursiva&lt;/p&gt;
+&lt;p class="caps"&gt;Texto en mayúsculas&lt;/p&gt;
+&lt;p class="gray"&gt;Texto gris&lt;/p&gt;</div>
+  </div>
+
+  <!-- ===========================
+       2. BOTONES
+  ============================ -->
+  <div class="section-card">
+    <div class="section-title">02 — Botones</div>
+    <h2 class="h3 bold mt1 mb2">Clase <code>.btn</code> + colores de fondo</h2>
+    <div class="preview-label">Vista previa:</div>
+    <button class="btn bg-blue white bold mr2 mb2">Botón Azul</button>
+    <button class="btn bg-green white bold mr2 mb2">Botón Verde</button>
+    <button class="btn bg-red white bold mr2 mb2">Botón Rojo</button>
+    <button class="btn bg-orange white bold mr2 mb2">Botón Naranja</button>
+    <button class="btn border bg-white gray bold mr2 mb2">Botón Outline</button>
+    <button class="btn bg-navy white bold rounded mr2 mb2">Botón Redondeado</button>
+    <hr class="divider">
+    <div class="preview-label">Código:</div>
+    <div class="code-block">&lt;button class="btn bg-blue white bold"&gt;Botón Azul&lt;/button&gt;
+&lt;button class="btn bg-green white bold"&gt;Botón Verde&lt;/button&gt;
+&lt;button class="btn bg-red white bold"&gt;Botón Rojo&lt;/button&gt;
+&lt;button class="btn border bg-white gray bold"&gt;Botón Outline&lt;/button&gt;
+&lt;button class="btn bg-navy white bold rounded"&gt;Botón Redondeado&lt;/button&gt;</div>
+  </div>
+
+  <!-- ===========================
+       3. FORMULARIOS
+  ============================ -->
+  <div class="section-card">
+    <div class="section-title">03 — Formularios</div>
+    <h2 class="h3 bold mt1 mb2">Clase <code>.input</code> y <code>.select</code></h2>
+    <div class="preview-label">Vista previa:</div>
+    <div style="max-width: 420px;">
+      <label class="bold mb1 block" style="font-size:14px;">Nombre</label>
+      <input class="input block full-width mb2" type="text" placeholder="Tu nombre completo">
+
+      <label class="bold mb1 block" style="font-size:14px;">Correo electrónico</label>
+      <input class="input block full-width mb2" type="email" placeholder="correo@ejemplo.com">
+
+      <label class="bold mb1 block" style="font-size:14px;">Mensaje</label>
+      <textarea class="input block full-width mb2" rows="3" placeholder="Escribe tu mensaje..."></textarea>
+
+      <label class="bold mb1 block" style="font-size:14px;">País</label>
+      <select class="input block full-width mb2">
+        <option>México</option>
+        <option>Argentina</option>
+        <option>Colombia</option>
+      </select>
+
+      <button class="btn bg-blue white bold full-width">Enviar formulario</button>
+    </div>
+    <hr class="divider">
+    <div class="preview-label">Código:</div>
+    <div class="code-block">&lt;input class="input block full-width mb2" type="text" placeholder="Tu nombre"&gt;
+&lt;input class="input block full-width mb2" type="email" placeholder="correo@ejemplo.com"&gt;
+&lt;textarea class="input block full-width mb2" rows="3"&gt;&lt;/textarea&gt;
+&lt;select class="input block full-width mb2"&gt;
+  &lt;option&gt;México&lt;/option&gt;
+&lt;/select&gt;
+&lt;button class="btn bg-blue white bold full-width"&gt;Enviar&lt;/button&gt;</div>
+  </div>
+
+  <!-- ===========================
+       4. NAVEGACIÓN
+  ============================ -->
+  <div class="section-card">
+    <div class="section-title">04 — Navegación (Navbar)</div>
+    <h2 class="h3 bold mt1 mb2">Usando <code>.flex</code>, <code>.items-center</code>, <code>.justify-between</code></h2>
+    <div class="preview-label">Vista previa:</div>
+    <div class="flex items-center justify-between px3 py2 bg-navy white" style="border-radius:8px;">
+      <span class="h4 bold m0">MiSitio</span>
+      <nav>
+        <a class="white px2" href="#" style="text-decoration:none;">Inicio</a>
+        <a class="white px2" href="#" style="text-decoration:none;">Servicios</a>
+        <a class="white px2" href="#" style="text-decoration:none;">Contacto</a>
+      </nav>
+    </div>
+    <hr class="divider">
+    <div class="preview-label">Código:</div>
+    <div class="code-block">&lt;div class="flex items-center justify-between px3 py2 bg-navy white"&gt;
+  &lt;span class="h4 bold m0"&gt;MiSitio&lt;/span&gt;
+  &lt;nav&gt;
+    &lt;a class="white px2" href="#"&gt;Inicio&lt;/a&gt;
+    &lt;a class="white px2" href="#"&gt;Servicios&lt;/a&gt;
+    &lt;a class="white px2" href="#"&gt;Contacto&lt;/a&gt;
+  &lt;/nav&gt;
+&lt;/div&gt;</div>
+  </div>
+
+  <!-- ===========================
+       5. BREADCRUMB
+  ============================ -->
+  <div class="section-card">
+    <div class="section-title">05 — Breadcrumb</div>
+    <h2 class="h3 bold mt1 mb2">Usando <code>.inline</code> y separadores de texto</h2>
+    <div class="preview-label">Vista previa:</div>
+    <div class="py2 px3 bg-silver" style="border-radius:8px;">
+      <span class="inline gray" style="font-size:14px;">Inicio</span>
+      <span class="inline gray px1">›</span>
+      <span class="inline gray" style="font-size:14px;">Animales</span>
+      <span class="inline gray px1">›</span>
+      <span class="inline bold" style="font-size:14px; color:#333;">Capibara</span>
+    </div>
+    <hr class="divider">
+    <div class="preview-label">Código:</div>
+    <div class="code-block">&lt;div class="py2 px3 bg-silver"&gt;
+  &lt;span class="inline gray"&gt;Inicio&lt;/span&gt;
+  &lt;span class="inline gray px1"&gt;›&lt;/span&gt;
+  &lt;span class="inline gray"&gt;Animales&lt;/span&gt;
+  &lt;span class="inline gray px1"&gt;›&lt;/span&gt;
+  &lt;span class="inline bold"&gt;Capibara&lt;/span&gt;
+&lt;/div&gt;</div>
+  </div>
+
+  <!-- ===========================
+       6. GRID SYSTEM
+  ============================ -->
+  <div class="section-card">
+    <div class="section-title">06 — Grid System (12 columnas)</div>
+    <h2 class="h3 bold mt1 mb2">Usando <code>.col</code>, <code>.col-6</code>, <code>.col-4</code>, <code>.col-8</code></h2>
+    <div class="preview-label">Vista previa — 2 columnas iguales (col-6 + col-6):</div>
+    <div class="flex flex-wrap mb2">
+      <div class="col col-6 p2 bg-blue white center" style="border-radius:6px 0 0 6px;">.col-6</div>
+      <div class="col col-6 p2 bg-navy white center" style="border-radius:0 6px 6px 0;">.col-6</div>
+    </div>
+    <div class="preview-label">3 columnas iguales (col-4 cada una):</div>
+    <div class="flex flex-wrap mb2">
+      <div class="col col-4 p2 bg-green white center" style="border-radius:6px 0 0 6px;">.col-4</div>
+      <div class="col col-4 p2 bg-teal white center">.col-4</div>
+      <div class="col col-4 p2 bg-navy white center" style="border-radius:0 6px 6px 0;">.col-4</div>
+    </div>
+    <div class="preview-label">Contenido + Sidebar (col-8 + col-4):</div>
+    <div class="flex flex-wrap">
+      <div class="col col-8 p2 bg-orange white" style="border-radius:6px 0 0 6px;">.col-8 — Contenido principal</div>
+      <div class="col col-4 p2 bg-red white" style="border-radius:0 6px 6px 0;">.col-4 — Sidebar</div>
+    </div>
+    <hr class="divider">
+    <div class="preview-label">Código:</div>
+    <div class="code-block">&lt;!-- 2 columnas iguales --&gt;
+&lt;div class="flex flex-wrap"&gt;
+  &lt;div class="col col-6"&gt;Columna 1&lt;/div&gt;
+  &lt;div class="col col-6"&gt;Columna 2&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Contenido + Sidebar --&gt;
+&lt;div class="flex flex-wrap"&gt;
+  &lt;div class="col col-8"&gt;Contenido principal&lt;/div&gt;
+  &lt;div class="col col-4"&gt;Sidebar&lt;/div&gt;
+&lt;/div&gt;</div>
+  </div>
+
+  <!-- ===========================
+       7. LISTAS
+  ============================ -->
+  <div class="section-card">
+    <div class="section-title">07 — Listas</div>
+    <h2 class="h3 bold mt1 mb2">Clase <code>.list-reset</code> para quitar estilos por defecto</h2>
+    <div class="preview-label">Vista previa:</div>
+    <div class="flex flex-wrap">
+      <div class="col col-6 pr3">
+        <p class="bold" style="font-size:13px;">Lista normal (sin clase):</p>
+        <ul>
+          <li>Elemento uno</li>
+          <li>Elemento dos</li>
+          <li>Elemento tres</li>
+        </ul>
+      </div>
+      <div class="col col-6">
+        <p class="bold" style="font-size:13px;">Con .list-reset (sin bullets ni padding):</p>
+        <ul class="list-reset">
+          <li class="mb1 py1 border-bottom"><i class="fa fa-paw" style="color:#0074d9;"></i> Elemento limpio</li>
+          <li class="mb1 py1 border-bottom"><i class="fa fa-paw" style="color:#0074d9;"></i> Elemento limpio</li>
+          <li class="mb1 py1"><i class="fa fa-paw" style="color:#0074d9;"></i> Elemento limpio</li>
+        </ul>
+      </div>
+    </div>
+    <hr class="divider">
+    <div class="preview-label">Código:</div>
+    <div class="code-block">&lt;ul class="list-reset"&gt;
+  &lt;li class="mb1 py1 border-bottom"&gt;Elemento limpio&lt;/li&gt;
+  &lt;li class="mb1 py1 border-bottom"&gt;Elemento limpio&lt;/li&gt;
+  &lt;li class="mb1 py1"&gt;Elemento limpio&lt;/li&gt;
+&lt;/ul&gt;</div>
+  </div>
+
+  <!-- ===========================
+       8. COLORES DE FONDO Y TEXTO
+  ============================ -->
+  <div class="section-card">
+    <div class="section-title">08 — Colores de fondo y texto</div>
+    <h2 class="h3 bold mt1 mb2">Clases <code>.bg-*</code> y colores de texto</h2>
+    <div class="preview-label">Vista previa — Fondos:</div>
+    <div class="flex flex-wrap mb2" style="gap:6px;">
+      <span class="p2 white bold bg-navy" style="border-radius:5px;font-size:13px;">.bg-navy</span>
+      <span class="p2 white bold bg-blue" style="border-radius:5px;font-size:13px;">.bg-blue</span>
+      <span class="p2 white bold bg-aqua" style="border-radius:5px;font-size:13px;">.bg-aqua</span>
+      <span class="p2 white bold bg-teal" style="border-radius:5px;font-size:13px;">.bg-teal</span>
+      <span class="p2 white bold bg-green" style="border-radius:5px;font-size:13px;">.bg-green</span>
+      <span class="p2 white bold bg-olive" style="border-radius:5px;font-size:13px;">.bg-olive</span>
+      <span class="p2 white bold bg-yellow black" style="border-radius:5px;font-size:13px;">.bg-yellow</span>
+      <span class="p2 white bold bg-orange" style="border-radius:5px;font-size:13px;">.bg-orange</span>
+      <span class="p2 white bold bg-red" style="border-radius:5px;font-size:13px;">.bg-red</span>
+      <span class="p2 white bold bg-fuchsia" style="border-radius:5px;font-size:13px;">.bg-fuchsia</span>
+      <span class="p2 white bold bg-purple" style="border-radius:5px;font-size:13px;">.bg-purple</span>
+      <span class="p2 white bold bg-maroon" style="border-radius:5px;font-size:13px;">.bg-maroon</span>
+      <span class="p2 bold bg-silver" style="border-radius:5px;font-size:13px;">.bg-silver</span>
+      <span class="p2 white bold bg-gray" style="border-radius:5px;font-size:13px;">.bg-gray</span>
+      <span class="p2 white bold bg-black" style="border-radius:5px;font-size:13px;">.bg-black</span>
+    </div>
+    <hr class="divider">
+    <div class="preview-label">Código:</div>
+    <div class="code-block">&lt;div class="bg-navy white"&gt;Fondo azul oscuro&lt;/div&gt;
+&lt;div class="bg-blue white"&gt;Fondo azul&lt;/div&gt;
+&lt;div class="bg-green white"&gt;Fondo verde&lt;/div&gt;
+&lt;div class="bg-red white"&gt;Fondo rojo&lt;/div&gt;
+&lt;div class="bg-silver"&gt;Fondo gris claro&lt;/div&gt;</div>
+  </div>
+
+  <!-- ===========================
+       9. MÁRGENES Y PADDING
+  ============================ -->
+  <div class="section-card">
+    <div class="section-title">09 — Márgenes y Padding</div>
+    <h2 class="h3 bold mt1 mb2">Clases <code>.m*</code> y <code>.p*</code> — Escala del 0 al 4</h2>
+    <div class="preview-label">Vista previa — Padding (p1 → p4):</div>
+    <div class="flex flex-wrap mb2" style="gap:8px; align-items:flex-start;">
+      <div class="p1 bg-blue white" style="border-radius:4px; font-size:12px;">.p1</div>
+      <div class="p2 bg-blue white" style="border-radius:4px; font-size:12px;">.p2</div>
+      <div class="p3 bg-blue white" style="border-radius:4px; font-size:12px;">.p3</div>
+      <div class="p4 bg-blue white" style="border-radius:4px; font-size:12px;">.p4</div>
+    </div>
+    <div class="preview-label">Clases de margen direccional:</div>
+    <p class="gray" style="font-size:14px;">
+      <code>.mt1</code> margin-top | <code>.mb2</code> margin-bottom | <code>.ml1</code> margin-left | <code>.mr2</code> margin-right<br>
+      <code>.mx-auto</code> centrar horizontalmente | <code>.px2</code> padding horizontal | <code>.py2</code> padding vertical
+    </p>
+    <hr class="divider">
+    <div class="preview-label">Código:</div>
+    <div class="code-block">&lt;div class="p1"&gt;Padding pequeño&lt;/div&gt;
+&lt;div class="p4"&gt;Padding grande&lt;/div&gt;
+&lt;div class="mt2 mb3"&gt;Margen top 2, bottom 3&lt;/div&gt;
+&lt;div class="px3 py2"&gt;Padding horizontal 3, vertical 2&lt;/div&gt;
+&lt;div class="mx-auto"&gt;Centrado con mx-auto&lt;/div&gt;</div>
+  </div>
+
+  <!-- ===========================
+       10. ICONOS FONT AWESOME
+  ============================ -->
+  <div class="section-card">
+    <div class="section-title">10 — Iconos (Font Awesome)</div>
+    <h2 class="h3 bold mt1 mb2">Basscss no incluye iconos propios — se usa Font Awesome</h2>
+    <div class="preview-label">CDN para agregar al &lt;head&gt;:</div>
+    <div class="code-block" style="margin-bottom:16px;">&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"&gt;</div>
+    <div class="preview-label">Vista previa — Iconos combinados con clases Basscss:</div>
+    <div class="flex flex-wrap" style="gap:12px; align-items:center;">
+      <button class="btn bg-blue white"><i class="fa fa-home mr1"></i> Inicio</button>
+      <button class="btn bg-green white"><i class="fa fa-check mr1"></i> Confirmar</button>
+      <button class="btn bg-red white"><i class="fa fa-trash mr1"></i> Eliminar</button>
+      <button class="btn bg-orange white"><i class="fa fa-star mr1"></i> Favorito</button>
+      <span class="p2 bg-silver" style="border-radius:50%;"><i class="fa fa-user fa-lg" style="color:#0074d9;"></i></span>
+      <span class="p2 bg-silver" style="border-radius:50%;"><i class="fa fa-envelope fa-lg" style="color:#e67e22;"></i></span>
+      <span class="p2 bg-silver" style="border-radius:50%;"><i class="fa fa-heart fa-lg" style="color:#e74c3c;"></i></span>
+    </div>
+    <hr class="divider">
+    <div class="preview-label">Código:</div>
+    <div class="code-block">&lt;button class="btn bg-blue white"&gt;
+  &lt;i class="fa fa-home mr1"&gt;&lt;/i&gt; Inicio
+&lt;/button&gt;
+
+&lt;button class="btn bg-green white"&gt;
+  &lt;i class="fa fa-check mr1"&gt;&lt;/i&gt; Confirmar
+&lt;/button&gt;
+
+&lt;i class="fa fa-heart fa-lg" style="color:red;"&gt;&lt;/i&gt;</div>
+  </div>
+
+  <!-- ===========================
+       11. CLASES DE DISPLAY Y FLEX
+  ============================ -->
+  <div class="section-card">
+    <div class="section-title">11 — Display y Flexbox</div>
+    <h2 class="h3 bold mt1 mb2">Clases <code>.flex</code>, <code>.block</code>, <code>.inline-block</code></h2>
+    <div class="preview-label">Vista previa — flex con justify y align:</div>
+    <div class="flex items-center justify-between p2 bg-silver mb2" style="border-radius:8px;">
+      <span class="bold">items-center</span>
+      <span class="gray">justify-between</span>
+      <span class="bg-blue white p1" style="border-radius:4px; font-size:12px;">flex</span>
+    </div>
+    <div class="flex items-center justify-center p2 bg-navy white mb2" style="border-radius:8px;">
+      <i class="fa fa-star mr2"></i>
+      <span>justify-center + items-center</span>
+      <i class="fa fa-star ml2"></i>
+    </div>
+    <hr class="divider">
+    <div class="preview-label">Código:</div>
+    <div class="code-block">&lt;div class="flex items-center justify-between"&gt;
+  &lt;span&gt;Izquierda&lt;/span&gt;
+  &lt;span&gt;Derecha&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div class="flex items-center justify-center"&gt;
+  &lt;span&gt;Centrado&lt;/span&gt;
+&lt;/div&gt;</div>
+  </div>
+
+  <div class="center py3 gray" style="font-size:13px;">
+    Basscss v8.0.2 — Licencia MIT — basscss.com
+  </div>
+
+</body>
+</html>
