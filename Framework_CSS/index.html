@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BassCSS Ejemplo</title>
+    <link href="https://unpkg.com/basscss@8.0.2/css/basscss.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/basscss@7.1.1/css/basscss.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <!--NAVBAR-->
+    <nav class="navbar flex items-center justify-between px3 py2 bg-navy white">
+        <span class="h3 bold">
+            CapiWorld
+        </span>
+        <div>
+            <a href="#datos" class="white px2">Datos</a>
+            <a href="#habitat" class="white px2">Habitat</a>
+        </div>
+    </nav>
+
+    <!--Hero-->
+    <div class="bg-navy white center px3 py4">
+        <p class="h1 m0"></p>
+        <h1 class="h1 bold mt1 mb1">Capibara</h1>
+        <p class="h4 gray italic mt0 mb2">Hydrochoerus hydrochaeris</p>
+        <p class="mb3">El roedor más grande del planeta</p>
+        <span class="border white px3 py1 mr2">
+            <i class="fa fa-map-marker-alt"></i>America del Sur
+        </span>
+        <span class="border white px3 py1">
+            <i class="fa fa-shield-halved"></i>Preocupación Menor
+        </span>
+    </div>
+
+    <!--HabitatS-->
+    <div id="datos" class="px3 py4 bg-white">
+    <h2 class="h2 bold center mb3">
+      <i class="fa fa-chart-bar"></i> Datos del Capibara
+    </h2>
+    <div class="flex flex-wrap justify-center">
+      <div class="col col-4 px2 mb3">
+        <div class="border rounded p3 center bg-silver">
+          <p class="h1 bold navy m0">65 kg</p>
+          <p class="gray caps mt1 mb0"><i class="fa fa-weight-hanging"></i> Peso promedio</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="habitat" class="px3 py4 bg-white">
+    <h2 class="h2 bold center mb3">
+      <i class="fa fa-map"></i> Hábitat Natural
+    </h2>
+    <div class="flex flex-wrap justify-center">
+      <div class="col col-4 px2 mb2">
+        <div class="bg-teal white rounded p3">
+          <p class="h3 center m0 mb2"><i class="fa fa-water"></i></p>
+          <p class="h4 bold center mt0 mb1">Riberas de ríos</p>
+          <p class="center mt0 mb0">Viven cerca de ríos, lagos y pantanos. El agua es su refugio ante depredadores.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--footer-->
+  <div class="bg-navy white px3 py3 center">
+    <p class="h4 bold mb1">CapiWorld</p>
+    <p class="gray mt0 mb2">Difundiendo el amor por el animal más tranquilo del planeta</p>
+    <p class="gray mt0 mb0">Construido con Basscss v8.0.2 + Basscss-color v7.1.1 + Font Awesome 6.5</p>
+  </div>
+</body>
+</html>
