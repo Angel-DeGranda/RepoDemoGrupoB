@@ -40,7 +40,7 @@ function obtenerPlataformas(){
 
 function seleccionarUsuario(u){
 
-    document.getElementById("id").value = u._id;
+    document.getElementById("id").value = u.id;
     document.getElementById("nombre").value = u.nombre;
     document.getElementById("email").value = u.email;
     document.getElementById("genero").value = u.genero;

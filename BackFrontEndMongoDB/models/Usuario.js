@@ -15,7 +15,7 @@ const UsuarioEsquema = new mongoose.Schema({
         required:true
     },
     plataformas:{
-        type:[String]
+        type: [String]
     }
 });
 
