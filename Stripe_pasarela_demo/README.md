@@ -1,4 +1,5 @@
-*Instrucciones*
+#Instrucciones
+
 Instalar los modulos siguientes para ejecutar el proyecto: 
 
 ***
