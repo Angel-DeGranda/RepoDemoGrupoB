@@ -1,49 +1,60 @@
-document.querySelectorAll('.tab').forEach(btn => {
-    btn.addEventListener('click', () => {
-        document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
-        document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
-        document.getElementById(btn.dataset.tab).classList.remove('hidden');
-        btn.classList.add('active');
+const btnLogIn = document.getElementById("iniciar-sesion");
+const btnSingUp = document.getElementById("registrarse");
+const partLogIn = document.getElementById("login");
+const partSingUp = document.getElementById("singup");
+const LogInCorreo = document.getElementById("login-correo");
+const LogInContrasena = document.getElementById("login-contrasena");
+const SingUpCorreo = document.getElementById("singup-correo");
+const SingUpContrasena = document.getElementById("singup-contrasena");
+
+const errorLoginEl = document.getElementById('login-error');
+const errorSingUpEl = document.getElementById('signup-error');
+errorLoginEl.style.display = 'none';
+errorSingUpEl.style.display = 'none';
+
+btnLogIn.addEventListener("click", () => {
+    btnSingUp.classList.remove("active");
+    btnLogIn.classList.add("active");
+    partLogIn.classList.remove("hidden");
+    partSingUp.classList.add("hidden");
+});
+
+btnSingUp.addEventListener("click", () => {
+    btnLogIn.classList.remove("active");
+    btnSingUp.classList.add("active");
+    partSingUp.classList.remove("hidden");
+    partLogIn.classList.add("hidden");
+});
+
+document.getElementById('login-form').addEventListener('submit', async e => {
+    e.preventDefault();
+    const correo = LogInCorreo.value;
+    const contrasena = LogInContrasena.value;
+
+    const res = await fetch("/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: `email=${encodeURIComponent(correo)}&password=${encodeURIComponent(contrasena)}`,
+        credentials: 'same-origin',
+        redirect: 'follow'
     });
+
+    window.location.href = res.url;
 });
 
-async function enviarFormulario(form, errorId) {
-    const params = new URLSearchParams(new FormData(form));
-    const errorEl = document.getElementById(errorId);
-    errorEl.style.display = 'none';
-
-    try {
-        const res = await fetch(form.action, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: params.toString(),
-            credentials: 'same-origin',
-            redirect: 'follow'
-        });
-
-        const finalUrl = res.url;
-
-        if (finalUrl.includes('/error') || finalUrl.includes('error.html')) {
-            const msg = new URL(finalUrl).searchParams.get('msg');
-            errorEl.textContent = msg || 'Ocurrió un error.';
-            errorEl.style.display = 'block';
-        } else {
-            window.location.href = finalUrl;
-        }
-    } catch (e) {
-        errorEl.textContent = 'Error de conexión.';
-        errorEl.style.display = 'block';
-    }
-}
-
-document.getElementById('login').addEventListener('submit', e => {
+document.getElementById('singup-form').addEventListener('submit', async e => {
     e.preventDefault();
-    enviarFormulario(e.target, 'login-error');
-    //window.location.href("singup_success.js");
-});
+    const correo = SingUpCorreo.value;
+    const contrasena = SingUpContrasena.value;
 
-document.getElementById('singup').addEventListener('submit', e => {
-    e.preventDefault();
-    enviarFormulario(e.target, 'signup-error');
-    window.location.href("singup_success.js");
+    const response = await fetch("/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: `email=${encodeURIComponent(correo)}&password=${encodeURIComponent(contrasena)}`,
+        credentials: 'same-origin',
+        redirect: 'follow'
+    });
+
+    window.location.href = response.url;
+
 });
